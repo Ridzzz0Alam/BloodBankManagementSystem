@@ -123,9 +123,9 @@ public:
 
 	int authenticate() {
 		int y, z;
-		cout << "Enter username";
+		cout << "Please enter your username: ";
 		cin >> y;
-		cout << "Enter password";
+		cout << "Please enter your password: ";
 		cin >> z;
 		int x;
 		if (y == username && z == password)
@@ -145,7 +145,7 @@ public:
 	void update(){
 
 		int r;
-		cout << "Enter DNR";
+		cout << "Enter DNR: ";
 		cin >> r;
 		if (r >= 1) {
 			cout << "DNR dosent exist";return;
@@ -412,11 +412,15 @@ public:
 
 int main() {
 
+	cout << "\t\t*********************************************************\n\n";
+	cout << "\t\t\t\t\t BLOOD BANK \n\n";
+	cout << "\t\t*********************************************************\n\n";
+	
 	int ch, count = 0;
 	class bloodbank b(123, 123);
 	while (count < 3) {
 		if (b.authenticate() == 0) {
-			cout << "\nInvalid Access";
+			cout << "\nInvalid Access\n\n";
 			count++;
 		}
 		else
@@ -424,13 +428,20 @@ int main() {
 	}
 
 	if (count == 3) {
-		cout << "Invalid access attempted beond 3 times, exiting";
+		cout << "INVALID ACCESS ATTEMPTED BEYOND 3 TIMES, EXITING\n\n";
 		return 1;
 	}
 	else {
 		while (1) {
-			cout << "\nEnter choice";
-			cout << "\n	1)Add donor 2)Update donor 3)Add hospital 4)Donate 5)Request Blood 6)Display available bloodpackets 7)Exit ";
+			cout << endl;
+			cout << "1)Add donor\n";
+			cout << "2)Update donor\n";
+			cout << "3)Add hospital\n";
+			cout << "4)Donate\n";
+			cout << "5)Request Blood\n";
+			cout << "6)Display available bloodpackets\n";
+			cout << "7)Exit\n";
+			cout << "Enter your choice: ";
 			cin >> ch;
 			switch (ch) {
 			case 1:
