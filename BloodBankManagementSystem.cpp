@@ -3,9 +3,9 @@
 #include<string.h>
 using namespace std;
 
-int k = 1;
+int k = 1, l =1 ;
 
-class Hospital {
+class hospital {
 
 	public:
 	int HPID;
@@ -23,7 +23,7 @@ class Hospital {
 
 	void payment_check(){
 		char ch;
-		cout << "HAS the paymenyt been made? (Y/N)";
+		cout << "Has the payment been made? (Y/N)";
 		cin >> ch;
 		if (ch == 'Y') {
 			cout << "Transaction Complete";
@@ -92,7 +92,7 @@ public:
 		case 1: cout << "\nEnter new fitness state";
 			cin >> fitness;
 			break;
-		case 2: cout << "|\nENter contact Number: ";
+		case 2: cout << "|\nEnter contact Number: ";
 			cin >> contact;
 			break;
 		default: cout << "\nInvalid inout: ";
@@ -100,8 +100,14 @@ public:
 	}
 };
 
-class bloodbank {
+class bloodpacket {
+public:
+	char t_1;
+	char r_1;
+	int expiry;
+};
 
+class bloodbank {
 public:
 	int z = 0, x = 0, c = 0, v = 0, w = 0, n = 0, m = 0, q = 0;
 	int username;
@@ -128,7 +134,7 @@ public:
 		else {
 			return 0;
 		}
-
+		
 		void b_register() {
 			d[1].d_register();
 			l = l + 1;
@@ -153,6 +159,34 @@ public:
 			k = k + 1;
 		}
 
+		void accept() {
+			int hid, flag = 0, i;
+			char req_t, req_r;
+			cout << "Enter HPID: ";
+			cin >> hid;
+			if (hid >= k) {
+				cout << "Enter a valid HPID\n";
+				return;
+			}
+			cout << "Enter required blood type: ";
+			cin >> req_t;
+			cout << "Enter required rhesius type (+/-): ";
+			cin >> req_r;
+			switch (req_t) {
+				case'A':if (req_r == '+') {
+							for ( i = 0; i < 3; i++)
+							{
+								if (b[i].expiry > 2017) {
+									flag = 300;
+									b[i].t_1 = '0';
+									b[i].r_1 = '0';
+									b[i].expiry = 0;
+									break;
+								}
+							}
+						}
+			}
+		}
 	}
 };
 
