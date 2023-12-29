@@ -20,4 +20,17 @@ class Hospital {
 		cin >> contactno;
 		cout << "Your HPID is: " << HPID << endl;
 	}
+
+	void payment_check(){
+		char ch;
+		cout << "HAS the paymenyt been made? (Y/N)";
+		cin >> ch;
+		if (ch == 'Y') {
+			cout << "Transaction Complete";
+		}
+		else {
+			cout << "Transaction Incomplete";
+		}
+	}
 };
+
