@@ -34,3 +34,51 @@ class Hospital {
 	}
 };
 
+class donor {
+
+public:
+	int fitness;
+	char name[10];
+	char contact[10];
+	int DNR;
+	char r;
+	char t;
+
+	void d_register() {
+
+		char str[2];
+		cout << "Enter Name: ";
+		cin >> name;
+		cout << "Enter Contact number: ";
+		cin >> contact;
+		cout << "\n Enter fitnes state( 1-fit, 0-unfit): ";
+		cin >> fitness;
+		while (1) {
+			cout << "\nEnter type: ";
+			cin >> str;
+			if (strcmp(str, "AB") == 0 || strcmp(str, "ab") == 0) {
+				t = 'x';
+				break;
+			}
+			else if (strcmp(str, "A") == 0 || strcmp(str, "B") == 0 || strcmp(str, "O") == 0 || strcmp(str, "a") == 0 || strcmp(str, "b") == 0 || strcmp(str, "o") == 0) {
+				t = str[0];
+				break;
+			}
+			else {
+				cout << "\nInvalid Type:";
+			}
+		}
+		while (1) {
+			cout << "Enter Rhesius(+/-):";
+			cin >> r;
+			if (r == '+' || r == '-') {
+				break;
+			}
+			else {
+				cout << "\nInvalid rheius(+/-)";
+			}
+		}
+		DNR = 1;
+		cout << "your DNR is: " << DNR;
+	}
+};
