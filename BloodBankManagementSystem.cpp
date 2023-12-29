@@ -121,6 +121,41 @@ public:
 		cout << "Enter password";
 		cin >> z;
 		int x;
-		
+		if (y == username && z == password) {
+			x = 2;
+			return x;
+		}
+		else {
+			return 0;
+		}
+
+		void b_register() {
+			d[1].d_register();
+			l = l + 1;
+		}
+
+		void update() {
+			int r;
+			cout << "Enter DNR: ";
+			cin >> r;
+			if (r >= 1) {
+				cout << "DNR dosent exist";
+				return;
+			}
+			else {
+				d[r].d_updation();
+			}
+		}
+
+		void h_registration() {
+
+			h[k].h_register();
+			k = k + 1;
+		}
+
 	}
 };
+
+int main() {
+
+}
