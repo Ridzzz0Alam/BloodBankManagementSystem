@@ -279,7 +279,119 @@ public:
 	}
 
 	void donate() {
-
+		int a, i;
+		cout << "Enter DNR: ";
+		cin >> a;
+		if (a >= l) {
+			cout << "Enter valid DNR\n";
+			return;
+		}
+		if (d[a].fitness == 0) {
+			cout << "Person is unfit to donate\n";
+			return;
+		}
+		char t, r;
+		t = d[a].t;
+		r = d[a].r;
+		switch (t){
+		case 'A':if (r == '+') {
+			for (i = 0; i < 3; i++) {
+				if (b[i].expiry < 2017) {
+					b[i].t_1 = d[a].t;
+					b[i].r_1 = d[a].r;
+					cout << "Enter expiry: ";
+					cin >> b[i].expiry;
+					z++;
+					break;
+				}
+			}
+		}
+				else {
+			for (i = 3;i < 6;i++) {
+				if (b[i].expiry < 2017) {
+					b[i].t_1 = d[a].t;
+					b[i].r_1 = d[a].r;
+					cout << "Enter expiry: ";
+					cin >> b[i].expiry;
+					break;
+				}
+			}
+		}break;
+		case 'B': if (r == '+') {
+			for (i = 6; i < 9; i++) {
+				if (b[i].expiry < 2017) {
+					b[i].t_1 = d[a].t;
+					b[i].r_1 = d[a].r;
+					cout << "Enter expiry: ";
+					cin >> b[i].expiry;
+					c++;
+					break;
+				}
+			}
+		}
+				else {
+			for (i = 9; i < 12;i++) {
+				if (b[i].expiry < 2017) {
+					b[i].t_1 = d[a].t;
+					b[i].r_1 = d[a].r;
+					cout << "enter expiry: ";
+					cin >> b[i].expiry;
+					v++;
+					break;
+				}
+			}
+		}break;
+		case 'O':if (r == '+') {
+			for (i = 12; i < 15; i++) {
+				if (b[i].expiry < 2017) {
+					b[i].t_1 = d[a].t;
+					b[i].r_1 = d[a].r;
+					cout << "Enter expiry: ";
+					cin >> b[i].expiry;
+					w++;
+					break;
+				}
+			}
+		}
+				else {
+			for (i = 12;i < 18;i++) {
+				if (b[i].expiry < 2017) {
+					b[i].t_1 = d[a].t;
+					b[i].r_1 = d[a].r;
+					cout << "Enter expiry: ";
+					cin >> b[i].expiry;
+					n++;
+					break;
+				}
+			}
+		}break;
+		case 'x':if (r == '+') {
+			for (i = 18; i < 21; i++) {
+				if (b[i].expiry < 2017) {
+					b[i].t_1 = d[a].t;
+					b[i].r_1 = d[a].r;
+					cout << "Enter expiry: ";
+					cin >> b[i].expiry;
+					m++;
+					break;
+				}
+			}
+		}
+				else {
+			for (i = 21;i < 24;i++) {
+				if (b[i].expiry < 2017) {
+					b[i].t_1 = d[a].t;
+					b[i].r_1 = d[a].r;
+					cout << "Enter expiry: ";
+					cin >> b[i].expiry;
+					q++;
+					break;
+				}
+			}
+		}break;
+		default:break;
+		}
+		cout << b[i].expiry;
 	}
 };
 
