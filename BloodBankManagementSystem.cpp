@@ -107,8 +107,8 @@ public:
 	int expiry;
 };
 
-
 class bloodbank {
+
 public:
 	int z = 0, x = 0, c = 0, v = 0, w = 0, n = 0, m = 0, q = 0;
 	int username;
@@ -123,6 +123,54 @@ public:
 
 	int authenticate() {
 		int y, z;
+		cout << "Enter username";
+		cin >> y;
+		cout << "Enter password";
+		cin >> z;
+		int x;
+		if (y == username && z == password)
+		{
+			x = 2;
+			return x;
+		}
+		else
+			return 0;
+	}
 
+	void b_register() {
+		d[l].d_register();
+		l = l + 1;
+	}
+
+	void update(){
+
+		int r;
+		cout << "Enter DNR";
+		cin >> r;
+		if (r >= 1) {
+			cout << "DNR dosent exist";return;
+		}
+		else
+			d[r].d_updation();
+	}
+
+	void h_registration() {
+		h[k].h_register();
+		k = k + 1;
+	}
+
+	void accept() {
+		int hid, flag = 0, i;
+		char req_t, req_r;
+		cout << "Enter HPID: ";
+		cin >> hid;
+		if (hid >= k) {
+			cout << "Enter valid HPID\n";
+			return;
+		}
 	}
 };
+
+
+
+
