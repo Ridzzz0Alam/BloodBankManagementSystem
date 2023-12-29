@@ -81,4 +81,21 @@ public:
 		DNR = 1;
 		cout << "your DNR is: " << DNR;
 	}
+
+	void d_updation()
+	{
+		int choice;
+		cout << "\nEnter choice:\n1.Update fitness state\n2. Update contact number";
+		cin >> choice;
+		switch (choice) {
+
+		case 1: cout << "\nEnter new fitness state";
+			cin >> fitness;
+			break;
+		case 2: cout << "|\nENter contact Number: ";
+			cin >> contact;
+			break;
+		default: cout << "\nInvalid inout: ";
+		}
+	}
 };
