@@ -393,6 +393,21 @@ public:
 		}
 		cout << b[i].expiry;
 	}
+
+	void show() {
+
+		cout << "BLOOD BANK DETAILS \n";
+		cout << " Available Blood Packets: \n";
+		cout << "Total blood packets available" << z + x + c + v + w + n + m + q;
+		cout << "\n A+   :" << z;
+		cout << "\n A-   :" << x;
+		cout << "\n B+   :" << c;
+		cout << "\n B-   :" << v;
+		cout << "\n O+   :" << w;
+		cout << "\n O-   :" << n;
+		cout << "\n AB+   :" << m;
+		cout << "\n AB-   :" << q;
+	}
 };
 
 
