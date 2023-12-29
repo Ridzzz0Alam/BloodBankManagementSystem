@@ -410,6 +410,51 @@ public:
 	}
 };
 
+int main() {
 
+	int ch, count = 0;
+	class bloodbank b(123, 123);
+	while (count < 3) {
+		if (b.authenticate() == 0) {
+			cout << "\nInvalid Access";
+			count++;
+		}
+		else
+			break;
+	}
 
+	if (count == 3) {
+		cout << "Invalid access attempted beond 3 times, exiting";
+		return 1;
+	}
+	else {
+		while (1) {
+			cout << "\nEnter choice";
+			cout << "\n	1)Add donor 2)Update donor 3)Add hospital 4)Donate 5)Request Blood 6)Display available bloodpackets 7)Exit ";
+			cin >> ch;
+			switch (ch) {
+			case 1:
+				b.b_register();
+				break;
+			case 2:
+				b.update();
+				break;
+			case 3:
+				b.h_registration();
+				break;
+			case 4:
+				b.donate();
+				break;
+			case 5:
+				b.accept();
+				break;
+			case 6:
+				b.show();
+			case 7:
+				return 0;
+			default: cout << "\nInvalid Entry";
+			}
+		}
+	}return 0;
+}
 
