@@ -168,6 +168,118 @@ public:
 			cout << "Enter valid HPID\n";
 			return;
 		}
+
+		cout << "Enter required blood type: ";
+		cin >> req_t;
+		cout << "Enter required rhesius type(+/-): ";
+		cin >> req_r;
+		switch (req_t) {
+		case 'A': if (req_r == '+') {
+			for (i = 0; i < 3; i++) {
+				if (b[i].expiry > 2017) {
+					flag = 300;
+					b[i].t_1 = '0';
+					b[i].r_1 = '0';
+					b[i].expiry = 0;
+					break;
+				}
+			}
+		}
+				else {
+			for (i = 3; i < 6; i++) {
+				if (b[i].expiry > 2017) {
+					flag = 1000;
+					b[i].t_1 = '0';
+					b[i].r_1 = '0';
+					b[i].expiry = 0;
+					break;
+				}
+			}
+		}
+				break;
+		case 'B': if (req_r == '+') {
+			for (i = 6; i < 9; i++) {
+				if (b[i].expiry > 2017) {
+					flag = 400;
+					b[i].t_1 = '0';
+					b[i].r_1 = '0';
+					b[i].expiry = 0;
+					break;
+				}
+			}
+		}
+				else {
+			for (i = 9; i < 12; i++) {
+				if (b[i].expiry > 2017) {
+					flag = 800;
+					b[i].t_1 = '0';
+					b[i].r_1 = '0';
+					b[i].expiry = 0;
+					break;
+				}
+			}
+		}
+				break;
+		case 'O':if (req_r == '+') {
+			for (i = 12;i < 15;i++) {
+				if (b[i].expiry > 2017) {
+					flag = 300;
+					b[i].t_1 = '0';
+					b[i].r_1 = '0';
+					b[i].expiry = 0;
+					break;
+				}
+			}
+		}
+				else {
+			for (i = 15; i < 18; i++) {
+				if (b[i].expiry > 2017) {
+					flag = 2000;
+					b[i].t_1 = '0';
+					b[i].r_1 = '0';
+					b[i].expiry = 0;
+					break;
+				}
+			}
+		}
+				break;
+		case 'x': if (req_r == '+') {
+			for (i = 18; i < 21; i++) {
+				if (b[i].expiry > 2017) {
+					flag = 500;
+					b[i].t_1 = '0';
+					b[i].r_1 = '0';
+					b[i].expiry = 0;
+					break;
+				}
+			}
+		}
+				else {
+			for (i = 21; i < 24; i++) {
+				if (b[i].expiry > 2017) {
+					flag = 2000;
+					b[i].t_1 = '0';
+					b[i].r_1 = '0';
+					b[i].expiry = 0;
+					break;
+				}
+			}
+		}
+				break;
+		default: break;
+		}
+
+		if (flag != 0) {
+			cout << "Cost of required Blood Packet is: " << flag;
+			h[hid].payment_check();
+		}
+		else {
+			cout << "Required Blood Packet not available";
+		}
+	}
+
+	void donate() {
+
 	}
 };
 
