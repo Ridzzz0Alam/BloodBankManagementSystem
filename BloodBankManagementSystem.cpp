@@ -99,3 +99,28 @@ public:
 		}
 	}
 };
+
+class bloodbank {
+
+public:
+	int z = 0, x = 0, c = 0, v = 0, w = 0, n = 0, m = 0, q = 0;
+	int username;
+	int password;
+	class donor d[5];
+	class hospital h[5];
+	class bloodpack b[24];
+	bloodbank(int a, int b) {
+		username = a;
+		password = b;
+	}
+
+	int authenticate() {
+		int y, z;
+		cout << "Enter username";
+		cin >> y;
+		cout << "Enter password";
+		cin >> z;
+		int x;
+		
+	}
+};
