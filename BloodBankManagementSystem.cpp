@@ -3,11 +3,11 @@
 #include<string.h>
 using namespace std;
 
-int k = 1, l =1 ;
+int k = 1, l = 1;
 
 class hospital {
 
-	public:
+public:
 	int HPID;
 	char contactno[10];
 	char rhesius;
@@ -21,7 +21,7 @@ class hospital {
 		cout << "Your HPID is: " << HPID << endl;
 	}
 
-	void payment_check(){
+	void payment_check() {
 		char ch;
 		cout << "Has the payment been made? (Y/N)";
 		cin >> ch;
@@ -107,6 +107,7 @@ public:
 	int expiry;
 };
 
+
 class bloodbank {
 public:
 	int z = 0, x = 0, c = 0, v = 0, w = 0, n = 0, m = 0, q = 0;
@@ -114,7 +115,7 @@ public:
 	int password;
 	class donor d[5];
 	class hospital h[5];
-	class bloodpack b[24];
+	class bloodpacket b[24];
 	bloodbank(int a, int b) {
 		username = a;
 		password = b;
@@ -122,74 +123,6 @@ public:
 
 	int authenticate() {
 		int y, z;
-		cout << "Enter username";
-		cin >> y;
-		cout << "Enter password";
-		cin >> z;
-		int x;
-		if (y == username && z == password) {
-			x = 2;
-			return x;
-		}
-		else {
-			return 0;
-		}
-		
-		void b_register() {
-			d[1].d_register();
-			l = l + 1;
-		}
 
-		void update() {
-			int r;
-			cout << "Enter DNR: ";
-			cin >> r;
-			if (r >= 1) {
-				cout << "DNR dosent exist";
-				return;
-			}
-			else {
-				d[r].d_updation();
-			}
-		}
-
-		void h_registration() {
-
-			h[k].h_register();
-			k = k + 1;
-		}
-
-		void accept() {
-			int hid, flag = 0, i;
-			char req_t, req_r;
-			cout << "Enter HPID: ";
-			cin >> hid;
-			if (hid >= k) {
-				cout << "Enter a valid HPID\n";
-				return;
-			}
-			cout << "Enter required blood type: ";
-			cin >> req_t;
-			cout << "Enter required rhesius type (+/-): ";
-			cin >> req_r;
-			switch (req_t) {
-				case'A':if (req_r == '+') {
-							for ( i = 0; i < 3; i++)
-							{
-								if (b[i].expiry > 2017) {
-									flag = 300;
-									b[i].t_1 = '0';
-									b[i].r_1 = '0';
-									b[i].expiry = 0;
-									break;
-								}
-							}
-						}
-			}
-		}
 	}
 };
-
-int main() {
-
-}
